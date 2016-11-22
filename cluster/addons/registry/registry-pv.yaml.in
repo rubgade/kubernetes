@@ -8,7 +8,7 @@ spec:
   capacity:
     storage: 20Gi 
     accessModes:
-    - ReadWriteOnce
-   awsElasticBlockStore:
-    volumeID:vol-02360d7f014991039
-    fsType: "ext4"
+     - ReadWriteOnce
+    awsElasticBlockStore:
+     volumeID:vol-02360d7f014991039
+     fsType: "ext4"
