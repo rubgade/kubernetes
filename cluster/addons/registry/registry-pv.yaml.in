@@ -5,12 +5,10 @@ metadata:
   labels:
     kubernetes.io/cluster-service: "true"
 spec:
-{% if pillar.get('cluster_registry_disk_type', '') == 'gce' %}
   capacity:
-    storage: {{ pillar['cluster_registry_disk_size'] }}
-  accessModes:
+    storage: 20Gi 
+    accessModes:
     - ReadWriteOnce
-  gcePersistentDisk:
-    pdName: "{{ pillar['cluster_registry_disk_name'] }}"
+   awsElasticBlockStore:
+    volumeID:vol-02360d7f014991039
     fsType: "ext4"
-{% endif %}
